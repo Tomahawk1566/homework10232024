@@ -1,3 +1,6 @@
+import java.util.ArrayList;
+import java.util.List;
+
 /*
 # 1
 Допустим, у вас есть List целых чисел. Напишите метод, который формирует List, в котором будут цифры из первого листа, которые больше некоторого заданного значения
@@ -19,9 +22,34 @@
 
 
  */
+import java.util.ArrayList;
+import java.util.List;
+
 public class Main {
     public static void main(String[] args) {
+        List<Integer> numbers = List.of(10, 44, 7, 6, 12, 89);
+        System.out.println(ifNumber(numbers,33));
+        System.out.println(index(numbers,33));
 
+    }
 
+    public static List<Integer> ifNumber(List<Integer> numbers, int value) {
+        List<Integer> result = new ArrayList<>();
+        for (int number : numbers) {
+            if (number > value) {
+                result.add(number);
+            }
+        }
+        return result;
+    }
+
+    public static List<Integer> index(List<Integer> numbers, int value) {
+        List<Integer> result = new ArrayList<>();
+        for (int number : numbers) {
+            if (number > value) {
+                result.add(numbers.indexOf(number));
+            }
+        }
+        return result;
     }
 }
